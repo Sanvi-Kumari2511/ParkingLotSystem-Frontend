@@ -7,11 +7,11 @@ export interface AuthData {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  /** Use Angular proxy – all /api/* requests are forwarded to http://localhost:8080 */
-  readonly GATEWAY_URL = '';
-  readonly AUTH_URL    = '';
-  /** Direct auth-service URL for OAuth2 flow (must bypass proxy) */
-  readonly OAUTH2_DIRECT_URL = 'http://localhost:8081';
+  /** Use Angular proxy – all /api/* requests are forwarded to https://13.51.195.1.nip.io/api/ via Nginx in prod */
+  readonly GATEWAY_URL = 'https://13.51.195.1.nip.io';
+  readonly AUTH_URL    = 'https://13.51.195.1.nip.io';
+  /** Direct auth-service URL for OAuth2 flow (proxied via Nginx) */
+  readonly OAUTH2_DIRECT_URL = 'https://13.51.195.1.nip.io';
 
   getToken():    string | null { return localStorage.getItem('accessToken'); }
   getRole():     string | null { return localStorage.getItem('role'); }
