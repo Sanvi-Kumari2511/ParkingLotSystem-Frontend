@@ -18,9 +18,9 @@ import { EmptyStateComponent } from '../../../shared/ui/ui.components';
       <div class="card" style="margin-bottom:24px">
         <form (ngSubmit)="searchByCity()">
           <div style="display:flex;gap:12px;align-items:center">
-            <input [(ngModel)]="city" name="city" style="flex:1;padding:11px 18px;border:1.5px solid rgba(0,0,0,0.1);border-radius:999px;font-size:0.9rem;background:#fff;outline:none" placeholder="Enter city, area or landmark..." />
+            <input [(ngModel)]="city" name="city" style="flex:1;padding:11px 18px;border:1px solid var(--border);border-radius:999px;font-size:0.9rem;background:var(--bg-3);color:var(--text);outline:none" placeholder="Enter city, area or landmark..." />
             <button type="submit" style="background:var(--accent);color:#fff;border:none;border-radius:999px;padding:10px 28px;font-weight:800;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;cursor:pointer;white-space:nowrap">Search</button>
-            <button type="button" (click)="searchNearby()" style="background:#fff;color:var(--text);border:1.5px solid rgba(0,0,0,0.12);border-radius:999px;padding:9px 20px;font-weight:800;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;cursor:pointer;white-space:nowrap">Nearby</button>
+            <button type="button" (click)="searchNearby()" style="background:var(--bg-3);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:9px 20px;font-weight:800;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;cursor:pointer;white-space:nowrap;transition:all 0.2s" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--text)'">Nearby</button>
           </div>
         </form>
       </div>

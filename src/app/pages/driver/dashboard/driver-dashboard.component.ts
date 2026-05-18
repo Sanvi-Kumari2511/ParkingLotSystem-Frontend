@@ -57,7 +57,7 @@ export class DriverDashboardComponent implements OnInit {
   bookings: any[] = []; loading = true;
   constructor(public router: Router, private api: ApiService, private auth: AuthService) {}
   get name() { return this.auth.getUserName(); }
-  get subtitle() { return `Good morning, ${this.name ? this.name.split(' ')[0].toUpperCase() : 'DRIVER'}`; }
+  get subtitle() { return `Hello, ${this.name ? this.name.split(' ')[0].toUpperCase() : 'DRIVER'}`; }
   get active()    { return this.bookings.filter(b => b.status === 'ACTIVE').length; }
   get reserved()  { return this.bookings.filter(b => b.status === 'RESERVED').length; }
   get completed() { return this.bookings.filter(b => b.status === 'COMPLETED').length; }
